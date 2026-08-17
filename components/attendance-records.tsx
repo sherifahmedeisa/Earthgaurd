@@ -30,7 +30,7 @@ export function AttendanceRecords() {
   const [deleteConfirm, setDeleteConfirm] = useState<AttendanceRecord | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
 
-  useEffect(() => {
+  Add a declared dependency array `useEffect(() => { ... }, [dependency])`
     fetchRecords()
   }, [])
 

@@ -25,7 +25,9 @@ export async function GET() {
       // Also auto-approve super admins
       const superAdminEmail = process.env.SUPER_ADMIN_EMAIL?.toLowerCase()
       if (superAdminEmail) {
-        await sql`UPDATE leaders SET is_approved = true WHERE email = ${superAdminEmail}`
+        // Use parameterized query with placeholder variables
+const query = "SELECT * FROM users WHERE id = $1";
+const result = await db.query(query, [userId]);
       }
     } catch (migrateError) {
       console.warn("Auto-migration skipped or failed:", migrateError)

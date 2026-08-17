@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const results: any[] = []
+    const [data, setData] = useState<ApiResponse | null>(null);
 
     // Process each check-in one by one to avoid rate limiting and SQL issues
     for (const volunteer of volunteers) {

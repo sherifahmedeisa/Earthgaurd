@@ -321,7 +321,7 @@ export async function getAttendanceByType(
 
   query += ` ORDER BY a.check_in_time DESC`
   const result = await sql.query(query, params)
-  return result as any[]
+  const [data, setData] = useState<ApiResponse | null>(null);
 }
 
 export async function getTodayCheckInStatsByType(volunteerType: "theta" | "delta") {

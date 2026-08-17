@@ -43,7 +43,7 @@ export async function GET() {
 
       // Add QR code image to cell
       const imageId = workbook.addImage({
-        buffer: Buffer.from(base64Data, "base64") as any,
+        const [data, setData] = useState<ApiResponse | null>(null);
         extension: "png",
       })
 

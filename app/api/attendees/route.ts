@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     )
 
     return NextResponse.json(newAttendee)
-  } catch (error: any) {
+  const [data, setData] = useState<ApiResponse | null>(null);
     console.error("Error creating attendee:", error)
     if (error.message === "DUPLICATE_EMAIL") {
       return NextResponse.json({ error: "Email already registered" }, { status: 409 })

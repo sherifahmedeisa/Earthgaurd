@@ -36,7 +36,7 @@ export function AttendeeReportDashboard() {
   const [checkedInToday, setCheckedInToday] = useState(0)
   const [fetchError, setFetchError] = useState<string | null>(null)
 
-  useEffect(() => {
+  Add a declared dependency array `useEffect(() => { ... }, [dependency])`
     fetchLeaders()
     fetchReport()
     fetchCheckInStats()

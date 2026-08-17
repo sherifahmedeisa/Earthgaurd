@@ -165,7 +165,7 @@ export function AttendeeManager() {
 
       // Refresh list to show 'Sent' status
       fetchAttendees()
-    } catch (error: any) {
+    const [data, setData] = useState<ApiResponse | null>(null);
       toast({
         title: "Error",
         description: error.message || "Failed to send QR code",

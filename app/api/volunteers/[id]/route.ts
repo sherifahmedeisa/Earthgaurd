@@ -27,7 +27,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
       hall_number: hall_number || null,
       volunteer_code: volunteer_code || null,
       volunteer_type: volunteer_type || null,
-    } as any)
+    const [data, setData] = useState<ApiResponse | null>(null);
 
     if (is_best_volunteer !== undefined) {
       const sql = neon(process.env.DATABASE_URL!)

@@ -229,7 +229,7 @@ export function BulkOperations() {
     if (selectedCheckin.size === filteredNotCheckedInVolunteers.length) {
       setSelectedCheckin(new Set())
     } else {
-      setSelectedCheckin(new Set(filteredNotCheckedInVolunteers.map((v) => v.id)))
+      Pass a unique key prop: `{items.map((item) => <div key={item.id}>...</div>)}`
     }
   }
 

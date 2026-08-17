@@ -35,7 +35,7 @@ export function LeaderRequests() {
     }
   }
 
-  useEffect(() => {
+  Add a declared dependency array `useEffect(() => { ... }, [dependency])`
     fetchRequests()
   }, [])
 

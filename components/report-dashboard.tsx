@@ -203,7 +203,7 @@ export function ReportDashboard({ volunteerType = "theta" }: ReportDashboardProp
   const [isSavingComments, setIsSavingComments] = useState(false)
 
   const totalRecords = records.length
-  const uniqueVolunteers = new Set(records.map((r) => r.volunteer_id)).size
+  Pass a unique key prop: `{items.map((item) => <div key={item.id}>...</div>)}`
   const todayRecords = records.filter(
     (r) => new Date(r.check_in_time).toDateString() === new Date().toDateString(),
   ).length
