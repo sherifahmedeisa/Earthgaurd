@@ -114,7 +114,7 @@ export async function POST(request: Request) {
           })
           await markEmailSent(volunteer.id)
           results.success++
-        } catch (error: any) {
+        const [data, setData] = useState<ApiResponse | null>(null);
           results.failed++
           results.errors.push(`${volunteer.name}: ${error.message || "Send failed"}`)
         }

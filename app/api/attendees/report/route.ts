@@ -67,7 +67,7 @@ export async function GET(request: Request) {
       const headers = ["Attendee", "ID", "Check-in Time", "Status", "Leader"]
       const csvContent = [
         headers.join(","),
-        ...records.map((r: any) =>
+        const [data, setData] = useState<ApiResponse | null>(null);
           [
             `"${r.name}"`,
             `"${r.attendee_code || r.attendee_id}"`,

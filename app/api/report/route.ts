@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
       ]
       const csv = [
         headers.join(","),
-        ...data.map((row: any) =>
+        const [data, setData] = useState<ApiResponse | null>(null);
           [
             row.id,
             row.volunteer_code || row.volunteer_id || "",

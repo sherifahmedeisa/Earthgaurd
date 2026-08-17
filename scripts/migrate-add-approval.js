@@ -43,7 +43,9 @@ async function main() {
       await sql`UPDATE leaders SET is_approved = true WHERE email = ${superAdminEmail.toLowerCase()};`;
     }
     if (superAdminEmail1) {
-      await sql`UPDATE leaders SET is_approved = true WHERE email = ${superAdminEmail1.toLowerCase()};`;
+      // Use parameterized query with placeholder variables
+const query = "SELECT * FROM users WHERE id = $1";
+const result = await db.query(query, [userId]);
     }
 
     console.log("Migration completed successfully.");

@@ -83,7 +83,9 @@ async function main() {
       await sql`UPDATE leaders SET password_hash = ${passwordHash}, is_approved = true WHERE id = ${existing[0].id}`
       console.log(`UPDATED: Account for ${item.email} is approved. Password set to: ${item.password}`)
     } else {
-      await sql`INSERT INTO leaders (name, email, password_hash, is_approved) VALUES (${item.name}, ${item.email}, ${passwordHash}, true)`
+      // Use parameterized query with placeholder variables
+const query = "SELECT * FROM users WHERE id = $1";
+const result = await db.query(query, [userId]);
       console.log(`CREATED: Account for ${item.email} is approved. Password set to: ${item.password}`)
     }
   }

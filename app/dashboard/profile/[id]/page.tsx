@@ -57,7 +57,7 @@ export default function VolunteerProfilePage() {
   const [isLoadingProfile, setIsLoadingProfile] = useState(true)
   const [isLoadingAttendance, setIsLoadingAttendance] = useState(true)
 
-  useEffect(() => {
+  Add a declared dependency array `useEffect(() => { ... }, [dependency])`
     fetchData()
   }, [volunteerId])
 

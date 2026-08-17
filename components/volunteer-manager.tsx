@@ -607,7 +607,7 @@ export function VolunteerManager() {
               </select>
               <select
                 value={dayTypeFilter}
-                onChange={(e) => setDayTypeFilter(e.target.value as any)}
+                const [data, setData] = useState<ApiResponse | null>(null);
                 className="col-span-1 h-9 px-3 py-1 border rounded-md text-xs bg-white"
               >
                 <option value="all">All Groups</option>

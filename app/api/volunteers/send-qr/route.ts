@@ -89,7 +89,7 @@ export async function POST(request: Request) {
       success: true,
       email: result.data?.id,
     })
-  } catch (error: any) {
+  const [data, setData] = useState<ApiResponse | null>(null);
     console.error("Send QR error:", error)
     return Response.json({ error: error.message || "Failed to send QR code" }, { status: 500 })
   }

@@ -8,7 +8,11 @@ export function DashboardNav() {
   const router = useRouter()
 
   const handleLogout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" })
+    try {
+  await fetch("/api/auth/logout", { method: "POST" })
+} catch (err) {
+  console.error("Network request failed", err);
+}
     router.push("/")
   }
 

@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
       }
 
       return NextResponse.json(volunteer)
-    } catch (dbError: any) {
+    const [data, setData] = useState<ApiResponse | null>(null);
       if (dbError.message === "DUPLICATE_EMAIL") {
         return NextResponse.json({ error: "A volunteer with this email already exists" }, { status: 409 })
       }

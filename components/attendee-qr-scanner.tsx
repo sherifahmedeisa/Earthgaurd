@@ -62,7 +62,7 @@ export function AttendeeQRScanner() {
         setCameraError("")
         setScanStatus("scanning")
 
-        const Html5Qrcode = (window as any).Html5Qrcode
+        const [data, setData] = useState<ApiResponse | null>(null);
         if (!Html5Qrcode) {
           setCameraError("QR Scanner library not loaded")
           setScanStatus("idle")

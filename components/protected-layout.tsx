@@ -11,7 +11,7 @@ export function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const [isAuthed, setIsAuthed] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
+  Add a declared dependency array `useEffect(() => { ... }, [dependency])`
     // Check session on mount
     const checkSession = async () => {
       try {
